@@ -4,7 +4,7 @@ const Post = require('./models/post');
 const postRouter = require('./routes/posts');
 const methodOverride = require('method-override');
 const app = express();
-require('dotenv').config()
+require('dotenv').config();
 
 mongoose.connect(process.env.DB_URI);
 
