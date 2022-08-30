@@ -1,12 +1,12 @@
 # zomblog
-
-[yt](https://www.youtube.com/watch?v=1NrHkjlWVhM)
+> blog about tech, movies, games or whatever else i feel like writing about.
 
 todo:
-- [ ] fix new post
-- [ ] implement editing
+- [x] fix new post
+- [x] implement editing
+- [ ] add tools/technologies used to readme
 
-not-so-fast-wise-guy:
+next:
 - [ ] pick color palette
 - [ ] redesign ui
 - [ ] user/s
