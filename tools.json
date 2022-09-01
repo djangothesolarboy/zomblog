@@ -1,9 +1,8 @@
 {
-    "tools": [
+    "technologies": [
         "bootstrap", 
         "ejs", 
         "javascript", 
-        "mongodb", 
         "nodejs", 
         "html",
         "bcryptjs",
@@ -18,5 +17,19 @@
         "mongoose",
         "slugify",
         "nodemon"
-    ]
+    ],
+    "tools": [
+        "vscode",
+        "youtube",
+        "windows terminal",
+        "mongodb",
+        "opera gx",
+        "firefox",
+        "postman"
+    ],
+    "other resources": {
+        "node/mongo user auth": "https://www.loginradius.com/blog/engineering/nodejs-and-mongodb-application-authentication-by-jwt/",
+        "mongoose models": "https://www.bezkoder.com/node-js-mongodb-auth-jwt/#Define_the_Mongoose_Model",
+        "node/mongo auth w/ jwt": "https://www.bezkoder.com/node-js-mongodb-auth-jwt/"
+    }
 }
