@@ -10,3 +10,5 @@ next:
 - [ ] pick color palette
 - [ ] redesign ui
 - [ ] user/s
+- [ ] design favicon
+- [ ] look into bootstrap

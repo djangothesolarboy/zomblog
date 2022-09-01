@@ -36,6 +36,7 @@ function redirectOnSavedPost(path) {
     return async (req, res) => {
         let post = req.post;
         post.title = req.body.title;
+        post.username = req.body.username;
         post.description = req.body.description;
         post.markdown = req.body.markdown;
         

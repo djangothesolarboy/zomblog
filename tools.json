@@ -1,0 +1,22 @@
+{
+    "tools": [
+        "bootstrap", 
+        "ejs", 
+        "javascript", 
+        "mongodb", 
+        "nodejs", 
+        "html",
+        "bcryptjs",
+        "cors",
+        "dompurify",
+        "dotenv",
+        "express",
+        "jsdom",
+        "jsonwebtoken",
+        "marked",
+        "method-override",
+        "mongoose",
+        "slugify",
+        "nodemon"
+    ]
+}
