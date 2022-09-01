@@ -2,8 +2,8 @@
 
 module.exports = function(app) {
     const userHandlers = require('../controllers/userController.js');
-    app.route('/auth/register')
+    app.route('/register')
         .post(userHandlers.register);
-    app.route('/auth/login')
+    app.route('/login')
         .post(userHandlers.login);
 }

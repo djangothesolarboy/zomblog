@@ -1,7 +1,6 @@
 'use strict';
 const mongoose = require('mongoose'),
-    bcrypt = require('bcryptjs'),
-    Schema = mongoose.Schema;
+    bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -19,8 +18,9 @@ const userSchema = new mongoose.Schema({
         trim: true,
         unqiue: true
     },
-    hash_password: {
-        type: String
+    password: {
+        type: String,
+        required: true
     },
     created: {
         type: Date,
@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 userSchema.methods.comparePassword = function (password) {
-    return bcrypt.compareSync(password, this.hash_password);
+    return bcrypt.compareSync(password, this.password);
 }
 
 module.exports = mongoose.model('User', userSchema);

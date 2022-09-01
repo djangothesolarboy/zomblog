@@ -1,29 +1,43 @@
-const express = require('express');
-const cors = require('cors');
+const express = require('express'),
+    cors = require('cors');
+    mongoose = require('mongoose'),
+    postRouter = require('./routes/posts'),
+    methodOverride = require('method-override'),
+    bodyParser = require('body-parser'),
+    jsonwebtoken = require('jsonwebtoken'),
+    Post = require('./models/post');
+
 let corsOptions = {
     origin: "https://localhost:5000"
 };
-const mongoose = require('mongoose');
-const db = {};
-db.mongoose = mongoose;
-db.user = require('./models/user');
-db.post = require('./models/post');
 
-
-const Post = require('./models/post');
-const postRouter = require('./routes/posts');
-const methodOverride = require('method-override');
-const app = express();
+let app = express();
 require('dotenv').config();
 
 mongoose.connect(process.env.DB_URI);
 
-
 app.use(cors(corsOptions));
+app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use('/posts', postRouter);
+
+app.use(function (req, res, next) {
+    if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
+        jsonwebtoken.verify(req.headers.authorization.split(' ')[1], 'RESTFULAPIs', function (e, decode) {
+            if (e) req.user = undefined;
+            req.user = decode;
+            next();
+        });
+    } else {
+        req.user = undefined;
+        next();
+    }
+})
+
+const users = require('./routes/users');
+users(app);
 
 app.get('/', async (req, res) => {
     const posts = await Post.find().sort({ createdOn: 'desc' });
@@ -31,3 +45,5 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(process.env.DB_PORT);
+
+module.exports = app;

@@ -1,20 +1,22 @@
 'use strict';
 
 const mongoose = require('mongoose'),
-    jwt = require('jswonwebtoken'),
-    bcrypt = require('bcryptjs'),
-    User = mongoose.model('User');
+    jwt = require('jsonwebtoken'),
+    bcrypt = require('bcrypt'),
+    User = require('../models/user');
+
+// const User = mongoose.model('User');
 
 exports.register = function(req, res) {
     const newUser = new User(req.body);
-    newUser.hash_password = bcrypt.hashSync(req.body.password, 10);
+    newUser.password = bcrypt.hashSync(req.body.password, 10);
     newUser.save(function (e, user) {
         if (e) {
             return res.status(400).send({
                 message: e
             });
         } else {
-            user.hash_password = undefined;
+            user.password = undefined;
             return res.json(user);
         }
     });
