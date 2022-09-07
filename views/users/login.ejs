@@ -14,9 +14,15 @@
     <div class="container">
         <h1 class="mb-4">login</h1>
 
-        <form action="/posts" method="post">
-            <%- include('_form_fields') %>
-        </form>
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input required type="email" name="email" id="email" class="form-control">
+                    <label for="password">password</label>
+                    <input required type="password" name="text" id="password" class="form-control">
+                </div>
+            </form>
+            <button type="submit" class="btn btn-primary">login</button>
     </div>
 </body>
 
