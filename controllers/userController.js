@@ -24,7 +24,7 @@ exports.register = function(req, res) {
 
 exports.login = function(req, res) {
     User.findOne({
-        email: req.body.email
+        username: req.body.username
     }, function (e, user) {
         if (e) throw e;
         if (!user || !user.comparePassword(req.body.password)) {

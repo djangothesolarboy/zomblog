@@ -5,6 +5,7 @@ todo:
 - [x] fix new post
 - [x] implement editing
 - [ ] add tools/technologies used to readme
+- [ ] email check broken (unique emails)
 
 next:
 - [ ] pick color palette
