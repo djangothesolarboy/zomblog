@@ -34,7 +34,8 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.5.2",
     "save": "^2.5.0",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "surrealdb.js": "^0.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
