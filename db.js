@@ -13,7 +13,7 @@ async function main() {
         });
 
         // Select a specific namespace / database
-        await db.use('test', 'test');
+        await db.use('zomblog', 'test');
 
         let user = await db.create('user');
         let post = await db.create('post')
@@ -29,18 +29,18 @@ async function main() {
             identifier: Math.random().toString(36).substr(2, 10),
         });
 
-        // // Update a person record with a specific id
-        // let updated = await db.change("person:jaime", {
-        //     marketing: true,
-        // });
+        // Update a person record with a specific id
+        let updated = await db.change("person:jaime", {
+            marketing: true,
+        });
 
-        // // Select all people records
-        // let people = await db.select("person");
+        // Select all people records
+        let people = await db.select("person");
 
-        // // Perform a custom advanced query
-        // let groups = await db.query('SELECT marketing, count() FROM type::table($tb) GROUP BY marketing', {
-        //     tb: 'person',
-        // });
+        // Perform a custom advanced query
+        let groups = await db.query('SELECT marketing, count() FROM type::table($tb) GROUP BY marketing', {
+            tb: 'person',
+        });
 
     } catch (e) {
 

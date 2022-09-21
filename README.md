@@ -1,5 +1,8 @@
-# zomblog
+# [zomblog](https://github.com/djangothesolarboy/zomblog)
+
 > blog about tech, movies, games or whatever else i feel like writing about.
+
+![](https://github.com/djangothesolarboy/zomblog)
 
 todo:
 - [x] fix new post

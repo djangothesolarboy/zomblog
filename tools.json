@@ -32,6 +32,7 @@
         "mongoose models": "https://www.bezkoder.com/node-js-mongodb-auth-jwt/#Define_the_Mongoose_Model",
         "node/mongo auth w/ jwt": "https://www.bezkoder.com/node-js-mongodb-auth-jwt/",
         "node user auth0": "https://www.youtube.com/watch?v=QQwo4E_B0y8",
-        "surrealdb docs": "https://surrealdb.com/docs/integration/http#select-all"
+        "surrealdb docs": "https://surrealdb.com/docs/integration/http#select-all",
+        "netlify build docs": "https://docs.netlify.com/configure-builds/troubleshooting-tips/"
     }
 }
